@@ -1,3 +1,150 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0d710bea4177d7dc86ca476e827f47af88d05df3052c1025e92af74925600856
-size 10175
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio Mixer</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+    }
+    .grid-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+    .play-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    .stop-button {
+        background-color: #f44336;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="panel1-tab" data-bs-toggle="tab" data-bs-target="#panel1" type="button" role="tab" aria-controls="panel1" aria-selected="true">HIEU UNG</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="panel2-tab" data-bs-toggle="tab" data-bs-target="#panel2" type="button" role="tab" aria-controls="panel2" aria-selected="false">NHAC</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="panel3-tab" data-bs-toggle="tab" data-bs-target="#panel3" type="button" role="tab" aria-controls="panel3" aria-selected="false">NHAC 2</button>
+    </li>
+    <!-- Add more tabs as needed -->
+</ul>
+
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="panel1" role="tabpanel" aria-labelledby="panel1-tab">
+        <div class="grid-container">
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/Bắn Súng.mp3')">Bắn Súng</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/CUOI CON NIT 7.mp3')">CUOI CON NIT 7</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/cuoi diem.mp3')">cuoi diem</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/Cuoi ha he.mp3')">Cuoi ha he</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/cuoi nu.mp3')">cuoi nu</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/cuoi nu.mp3')">cuoi nu</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/Cuoi-1.mp3')">Cuoi-1</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/Cuoi-2.mp3')">Cuoi-2</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/Cuoi-Deu.mp3')">Cuoi-Deu</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/cuoi2023.mp3')">cuoi2023</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/cuoi2023a.mp3')">cuoi2023a</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/HON 2.mp3')">HON 2</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/HON.mp3')">HON</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/nhac win pk 3.mp3')">nhac win pk 3</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/OPEN.mp3')">OPEN</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/Qua-Keu.mp3')">Qua-Keu</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/TAT.mp3')">TAT</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/TreEmCuoi.mp3')">TreEmCuoi</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/VinhBietCu.mp3')">VinhBietCu</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/VO TAY 2.mp3')">VO TAY 2</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/Vo-Tay.mp3')">Vo-Tay</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/WIN-PK1.mp3')">WIN-PK1</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/WIN-PK1.mp3')">WIN-PK1</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/WIN-PK2.mp3')">WIN-PK2</button>
+            <button class="grid-item" onclick="playAudio('audio/HIEU UNG/WOW.mp3')">WOW</button>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="panel2" role="tabpanel" aria-labelledby="panel2-tab">
+        <div class="grid-container">
+            <button class="grid-item" onclick="playAudio('audio/NHAC/AUXIMA.mp3')">AUXIMA</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/Ban doi lam ban voi toi ha.mp3')">Ban doi lam ban voi toi ha</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/CAI QQ GI DAY.mp3')">CAI QQ GI DAY</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/Cam on anh FULL3.mp3')">Cam on anh FULL3</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/CanYouFeel.mp3')">CanYouFeel</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/CauCa.mp3')">Cau-Ca</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/CHƠI TỚI.mp3')">CHƠI TỚI</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/COI NHU LÀ XUI FULL.mp3')">COI NHU LÀ XUI FULL</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/DRAMA.mp3')">DRAMA</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/ê đánh lộn không.mp3')">ê đánh lộn không</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/ê đánh lộn không.mp3')">ê đánh lộn không</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/Funny.mp3')">Funny</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/GAY-CAN.mp3')">GAY-CAN</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/GHE CHUA.mp3')">GHE CHUA</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/khi anh qua thung lung.mp3')">khi anh qua thung lung</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/khoai khoai.mp3')">khoai khoai</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/Khoc remix.mp3')">Khoc remix</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/KHÔNG DỄ ĐÂU ANH FULL.mp3')">KHÔNG DỄ ĐÂU ANH FULL</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/leu leu.mp3')">leu leu</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/Love-You.mp3')">Love-You</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/mono cat.mp3')">mono cat</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/OH NO.mp3')">OH NO</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/saohayrade.mp3')">saohayrade</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/Scheming.mp3')">Scheming</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC/Troi oi bao tap mua xa.mp3')">Troi oi bao tap mua xa</button>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="panel3" role="tabpanel" aria-labelledby="panel3-tab">
+        <div class="grid-container">
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/1. Bong ta nga tren lung.mp3')">1. Bong ta nga tren lung</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/2. Vi qua ngu si.mp3')">2. Vi qua ngu si</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/4. YEAH.mp3')">4. YEAH</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/6. TRONG 25 S.mp3')">6. TRONG 25 S</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/9. O Ma La.mp3')">9. O Ma La</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/10. Chết mịa rồi rồi.mp3')">10. Chết mịa rồi rồi</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/11. KEM CHONG NHUC 2.mp3')">11. KEM CHONG NHUC 2</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/12. KHEO DUA 2.mp3')">12. KHEO DUA 2</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/ae tui đến nè full1.mp3')">ae tui đến nè full1</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/BẠC PHẬN FULL.mp3')">BẠC PHẬN FULL</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/Chung ta k giong nhau.mp3')">Chung ta k giong nhau</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/EDM THAI.mp3')">EDM THAI</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/HELLO SO LY.mp3')">HELLO SO LY</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/KÈN TÂY.mp3')">KÈN TÂY</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/LALALA 3.mp3')">LALALA 3</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/Nhac-Buon.mp3')">Nhac-Buon</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/Nhung Loi Doi Gian.mp3')">Nhung Loi Doi Gian</button>
+            <button class="grid-item" onclick="playAudio('audio/NHAC 2/That vo nghia.mp3')">That vo nghia</button>
+        </div>
+    </div>
+</div>
+
+<audio id="audioPlayer" controls style="display: none;"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+var audioPlayer = document.getElementById('audioPlayer');
+
+function playAudio(src) {
+    audioPlayer.src = src;
+    audioPlayer.play();
+}
+</script>
+
+
+</body>
+</html>
