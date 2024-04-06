@@ -32,6 +32,11 @@
         padding: 10px 20px;
         border: none;
         cursor: pointer;
+        position: absolute; /* Set position absolute */
+        bottom: 10px; /* Set bottom position */
+        left: 50%; /* Set left position to center */
+        transform: translateX(-50%); /* Center horizontally */
+        width: 100%;
     }
 </style>
 </head>
@@ -132,6 +137,7 @@
         </div>
     </div>
 </div>
+<button class="stop-button" onclick="stopAudio()">Stop</button>
 
 <audio id="audioPlayer" controls style="display: none;"></audio>
 
@@ -142,6 +148,12 @@ var audioPlayer = document.getElementById('audioPlayer');
 function playAudio(src) {
     audioPlayer.src = src;
     audioPlayer.play();
+}
+
+function stopAudio() {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+    audioPlayer.loop = false;
 }
 </script>
 
